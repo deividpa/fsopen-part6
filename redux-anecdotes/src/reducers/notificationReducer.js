@@ -8,11 +8,20 @@ const notificationSlice = createSlice({
       return action.payload;
     },
     clearNotification() {
-      return '';
+      return 'Welcome to the Anecdote app!';
     }
   }
 });
 
 export const { setNotification, clearNotification } = notificationSlice.actions;
+
+export const showNotification = (message, timeInSeconds) => {
+    return dispatch => {
+      dispatch(setNotification(message))
+      setTimeout(() => {
+        dispatch(clearNotification())
+      }, timeInSeconds * 1000)
+    }
+  }
 
 export default notificationSlice.reducer;
