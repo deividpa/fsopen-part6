@@ -11,10 +11,9 @@ const AnecdoteList = () => {
         anecdote.content.toLowerCase().includes(filter.toLowerCase())
     )
 
-    const vote = (id) => {
-        console.log('vote', id)
-        dispatch(voteAnecdote(id))
-    }
+    const handleVote = (id) => {
+        dispatch(voteAnecdote(id));
+    };
 
     return (
         <div>
@@ -23,7 +22,7 @@ const AnecdoteList = () => {
                     <div>{anecdote.content}</div>
                     <div>
                         has {anecdote.votes}
-                        <button onClick={() => vote(anecdote.id)}>vote</button>
+                        <button onClick={() => handleVote(anecdote.id)}>vote</button>
                     </div>
                 </div>
             )}
