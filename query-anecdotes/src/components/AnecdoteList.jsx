@@ -1,5 +1,4 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import PropTypes from 'prop-types';
 import { getAnecdotes, updateAnecdote } from '../services/anecdoteService';
 
 const AnecdoteList = () => {
@@ -44,10 +43,6 @@ const AnecdoteList = () => {
         ))}
         </div>
     );
-};
-
-AnecdoteList.propTypes = {
-    handleVote: PropTypes.func.isRequired
 };
 
 export default AnecdoteList;
